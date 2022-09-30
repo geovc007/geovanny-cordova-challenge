@@ -13,3 +13,5 @@ app.use("/api/mutant", require("./routes/mutant"));
 app.listen(PORT, () => {
   console.log(`Server ejecutandose, listen port ${PORT}`);
 });
+
+module.exports = app;

@@ -1,12 +1,30 @@
-import { describe, expect, test } from "@jest/globals";
-const mutantController = require("../controllers/mutantController");
+const request = require("supertest");
+const app = require("../index");
+const db = require("./db");
 
-describe("Mutants_Module", () => {
-  const data = {
-    dna: "['aerwer','berwerw','erwerc','werwerd']",
-  };
+const agent = request.agent(app);
 
-  test("Should_Save_Mutants", () => {
-    expect(mutantController.ingresarMutante(data).toBe("OK"));
+beforeAll(async () => await db.connect());
+afterEach(async () => await db.clear());
+afterAll(async () => await db.close());
+
+// test("POST /api/mutant, Should_Reclute_Mutant", (done) => {
+//   agent
+//     .post("/api/mutant")
+//     .send({
+//       dna: "['aerwer','berwerw','erwerc','werwerd']",
+//     })
+//     .expect(200)
+//     .then((res) => {
+//       done();
+//     });
+// });
+
+describe("POST /api/mutant", () => {
+  test("Should Verify Mutant OK", async () => {
+    const response = await agent.post("/api/mutant").send({
+      dna: "['aerwer','berwerw','erwerc','werwerd']",
+    });
+    expect(response.statusCode).toEqual(200);
   });
 });
