@@ -16,3 +16,17 @@ exports.ingresarMutante = async (req, res) => {
     res.status(403).send("Hubo un Error al verificar Mutantes");
   }
 };
+
+exports.statusMutante = async (req, res) => {
+  console.log("Status Mutante");
+};
+
+exports.getMutant = async (req, res) => {
+  try {
+    const mutants = await Mutant.find();
+    res.json({ mutants });
+  } catch (error) {
+    console.log(error);
+    res.status(403).send("Hubo un Error al obtener Mutantes");
+  }
+};

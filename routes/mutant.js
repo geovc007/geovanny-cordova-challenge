@@ -9,4 +9,8 @@ router.post(
   mutantController.ingresarMutante
 );
 
+router.get("/stats", mutantController.statusMutante);
+
+router.get("/", mutantController.getMutant);
+
 module.exports = router;
