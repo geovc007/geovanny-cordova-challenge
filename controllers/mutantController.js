@@ -18,7 +18,7 @@ exports.ingresarMutante = async (req, res) => {
 };
 
 exports.statusMutante = async (req, res) => {
-  console.log("Status Mutante");
+    res.send("OK");
 };
 
 exports.getMutant = async (req, res) => {
