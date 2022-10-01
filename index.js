@@ -1,6 +1,8 @@
 const express = require("express");
 const conectionMongo = require("./config/db");
 const cors = require("cors");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const app = express();
 conectionMongo();
@@ -9,6 +11,7 @@ app.use(express.json({ extended: true }));
 
 const PORT = process.env.PORT || 4000;
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/mutant", require("./routes/mutant"));
 
 app.listen(PORT, () => {
