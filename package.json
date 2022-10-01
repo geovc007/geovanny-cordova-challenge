@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "test:ci": "npm run jest -- --watchAll=false"
+    "testing": "jest --watchAll=false"
   },
   "repository": {
     "type": "git",
