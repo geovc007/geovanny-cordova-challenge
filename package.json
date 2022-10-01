@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "test": "jest  --forceExit --runInBand --testTimeout=50000"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -36,11 +36,5 @@
     "express-validator": "^6.14.2",
     "mongodb-memory-server": "^8.9.3",
     "mongoose": "^6.6.2"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ]
   }
 }
