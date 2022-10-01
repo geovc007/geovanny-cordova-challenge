@@ -24,9 +24,7 @@
   "homepage": "https://github.com/geovc007/geovanny-cordova-challenge#readme",
   "devDependencies": {
     "jest": "^29.1.2",
-    "mockingoose": "^2.15.2",
-    "nodemon": "^2.0.20",
-    "supertest": "^6.2.4"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -34,7 +32,6 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
-    "mongodb-memory-server": "^8.9.3",
     "mongoose": "^6.6.2"
   }
 }
