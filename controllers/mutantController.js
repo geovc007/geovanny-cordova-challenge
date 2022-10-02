@@ -1,5 +1,6 @@
 const Mutant = require("../models/Mutant");
 const { validationResult } = require("express-validator");
+const mutantService = require("../Services/mutantsServices");
 
 exports.ingresarMutante = async (req, res) => {
   try {
@@ -9,16 +10,34 @@ exports.ingresarMutante = async (req, res) => {
     }
     let mutant;
     mutant = new Mutant(req.body);
-    await mutant.save();
-    res.send("OK");
+    // Evalute Mutants Row
+    const { dna } = mutant;
+    const row = mutantService.verificarMutanteRow(dna);
+    if (row === true) {
+      mutant.verify = row;
+      await mutant.save();
+      res.send({ msg: "El Adn es Mutante" });
+    } else {
+      // Evaluate Mutants Col
+      const col = mutantService.verificarMutanteCol(dna);
+      if (col === true) {
+        mutant.verify = col;
+        await mutant.save();
+        res.send({ msg: "El Adn es Mutante" });
+      } else {
+        mutant.verify = row;
+        await mutant.save();
+        res.status(403).send({ msg: "El Adn es Humano" });
+      }
+    }
   } catch (error) {
     console.log(error);
-    res.status(403).send("Hubo un Error al verificar Mutantes");
+    res.status(403).send({ msg: "Hubo un Error al verificar Mutantes" });
   }
 };
 
 exports.statusMutante = async (req, res) => {
-    res.send("OK");
+  res.send("OK");
 };
 
 exports.getMutant = async (req, res) => {
