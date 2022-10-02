@@ -37,7 +37,19 @@ exports.ingresarMutante = async (req, res) => {
 };
 
 exports.statusMutante = async (req, res) => {
-  res.send("OK");
+  try {
+    const mutants = await Mutant.count({ verify: true });
+    const humans = await Mutant.count({ verify: false });
+    const ratio = Number((mutants / humans).toFixed(3));
+    res.send({
+      count_mutant_dna: mutants,
+      count_human_dna: humans,
+      ratio: ratio,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(403).send("Hubo un Error al obtener Mutantes");
+  }
 };
 
 exports.getMutant = async (req, res) => {

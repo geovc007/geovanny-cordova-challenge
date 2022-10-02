@@ -42,4 +42,19 @@ const verificarMutanteCol = (dna) => {
   return verificarMutanteRow(matColum);
 };
 
-module.exports = { verificarMutanteRow, verificarMutanteCol };
+const verificarMutanteDiv = (dna) => {
+  let matrizDNA = [];
+  console.log("dna: ", dna);
+  for (const element of dna) {
+    matrizDNA.push(element.split(""));
+  }
+  let matColum = [];
+  let col = 0;
+  let newRow = "";
+};
+
+module.exports = {
+  verificarMutanteRow,
+  verificarMutanteCol,
+  verificarMutanteDiv,
+};
