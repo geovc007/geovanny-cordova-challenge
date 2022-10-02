@@ -1,0 +1,33 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Mutants Challenge ",
+        "description": "Proyecto desarrollado por Geovanny Cordova para identificar mutantes en ADN"
+    },
+    "host": "https://geovannycordovachallenge.azurewebsites.net",
+    "basePath": "/",
+    "tags": [{
+        "name": "Mutants",
+        "description": "API for mutants in the system"
+    }],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": ["Mutants"],
+                "summary": "Get all ADN in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
