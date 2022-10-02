@@ -31,3 +31,10 @@ test("Should Verify Mutant in  left->rigth bottom->top", async () => {
   const response = mutantServices.verificarMutanteDiv(dna);
   expect(response).toBe(true);
 });
+
+test("Should Verify Mutant in  rigth->left bottom->top", async () => {
+  const dna = ["ATGCGT", "CAGTTC", "TTGTGT", "AGTAGG", "CTACAT", "TCACTA"];
+  const response = mutantServices.verificarMutanteDiv(dna);
+  expect(response).toBe(true);
+});
+

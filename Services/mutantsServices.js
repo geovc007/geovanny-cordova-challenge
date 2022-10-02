@@ -51,27 +51,40 @@ const verificarMutanteDiv = (dna) => {
   let matColum = [];
   let newRow = "";
   for (let i = 0; i < matrizDNA.length; i++) {
-    let count = i;
-    let col = 0;
-    for (let j = i; j < matrizDNA.length; j++) {
-      newRow += matrizDNA[col][j];
-      count++;
-      col++;
-      if (count === matrizDNA.length) {
-        if (newRow.length > 3) {
-          matColum.push(newRow);
-        }
-        newRow = "";
-      }
-    }
-    let countR = matrizDNA.length - 1;
-    let colR = i;
-    newRow="";
-    for (let j = matrizDNA.length - 1; j >= i; j--) {
-      newRow += matrizDNA[j][colR];
-      countR++;
-      colR++;
-      if (colR === matrizDNA.length) {
+    // let count = i;
+    // let col = 0;
+    // for (let j = i; j < matrizDNA.length; j++) {
+    //   newRow += matrizDNA[col][j];
+    //   count++;
+    //   col++;
+    //   if (count === matrizDNA.length) {
+    //     if (newRow.length > 3) {
+    //       matColum.push(newRow);
+    //     }
+    //     newRow = "";
+    //   }
+    // }
+    // let countR = matrizDNA.length - 1;
+    // let colR = i;
+    // newRow="";
+    // for (let j = matrizDNA.length - 1; j >= i; j--) {
+    //   newRow += matrizDNA[j][colR];
+    //   countR++;
+    //   colR++;
+    //   if (colR === matrizDNA.length) {
+    //     if (newRow.length > 3) {
+    //       matColum.push(newRow);
+    //     }
+    //     newRow = "";
+    //   }
+    // }
+    let countL = i
+    let colL = 0;
+    for (let j = (matrizDNA.length- 1) - i; j >= 0; j--) {
+      newRow += matrizDNA[j][colL];
+      countL++;
+      colL++;
+      if (colL === matrizDNA.length) {
         if (newRow.length > 3) {
           matColum.push(newRow);
         }
