@@ -56,7 +56,7 @@ exports.statusMutante = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.status(403).send("Hubo un Error al obtener Mutantes");
+    res.status(403).send({msg: "Hubo un Error al obtener Mutantes"});
   }
 };
 
@@ -66,6 +66,6 @@ exports.getMutant = async (req, res) => {
     res.json({ mutants });
   } catch (error) {
     console.log(error);
-    res.status(403).send("Hubo un Error al obtener Mutantes");
+    res.status(403).send({msg: "Hubo un Error al obtener Mutantes"});
   }
 };
