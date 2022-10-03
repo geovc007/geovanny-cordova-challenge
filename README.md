@@ -41,7 +41,7 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};<br>
               "dna":  ["ATGCAA", "CAGTGC", "TTATGT","AGAAGG","ACCCTA", "TCACTT"]
             }
          <br>
-  Response OK 200: {"msg": "El Adn es Mutante"}
+  Response OK 200: {"msg": "El Adn es Mutante"}<br>
   Reponse Fail 403: {"msg": "El Adn es Humano"}
  <br><br>
   **GET: https://geovannycordovachallenge.azurewebsites.net/api/mutant/stats**<br>
