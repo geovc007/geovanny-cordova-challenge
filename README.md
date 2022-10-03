@@ -35,17 +35,16 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};<br>
 
 **APIS REQUERIDAS**<br><br>
 
- - **POST https://geovannycordovachallenge.azurewebsites.net/api/mutant**<br>
+  **POST: https://geovannycordovachallenge.azurewebsites.net/api/mutant**<br>
    Esta API se encarga de verificar si el ADN es de un humano y un mutante de acuerdo a los requerimientos.<br>
    Request: {
               "dna":  ["ATGCAA", "CAGTGC", "TTATGT","AGAAGG","ACCCTA", "TCACTT"]
             }
          <br>
   Response OK 200: {"msg": "El Adn es Mutante"}
- <br>
   Reponse Fail 403: {"msg": "El Adn es Humano"}
  <br><br>
- - **GET https://geovannycordovachallenge.azurewebsites.net/api/mutant/stats**<br>
+  **GET: https://geovannycordovachallenge.azurewebsites.net/api/mutant/stats**<br>
    Esta API se encarga de llevar el estatus de ingresos de ADN mutantes y ADN humanos, y realiza el calculo de 
    de conversion entre humanos y mutantes<br>
    Response OK 200: {
@@ -56,7 +55,7 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};<br>
                     <br>
    Response Fail 403: {msg: "Hubo un Error al obtener ADNs"}
  <br><br>
- - **GET https://geovannycordovachallenge.azurewebsites.net/api/mutant**<br>
+ **GET: https://geovannycordovachallenge.azurewebsites.net/api/mutant**<br>
  Esta API nos devuelve todos los ADNs ingresados y verificados en la Aplicacion<br>
    Response 200 OK : {
                         "_id": "63390683933c4f9173716cac",
