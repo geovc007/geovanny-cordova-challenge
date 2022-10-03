@@ -40,6 +40,10 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};<br>
    Request: {
               "dna":  ["ATGCAA", "CAGTGC", "TTATGT","AGAAGG","ACCCTA", "TCACTT"]
             }
+         <br>
+  Response OK 200: {"msg": "El Adn es Mutante"}
+ <br>
+  Reponse Fail 403: {"msg": "El Adn es Humano"}
  <br><br>
  - **GET https://geovannycordovachallenge.azurewebsites.net/api/mutant/stats**<br>
    Esta API se encarga de llevar el estatus de ingresos de ADN mutantes y ADN humanos, y realiza el calculo de 
@@ -49,7 +53,8 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};<br>
                         "count_human_dna": 6,
                         "ratio": 2.167
                     }
-   Response Fail 203: {msg: "Hubo un Error al obtener ADNs"}
+                    <br>
+   Response Fail 403: {msg: "Hubo un Error al obtener ADNs"}
  <br><br>
  - **GET https://geovannycordovachallenge.azurewebsites.net/api/mutant**<br>
  Esta API nos devuelve todos los ADNs ingresados y verificados en la Aplicacion<br>
@@ -67,7 +72,7 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};<br>
                         "__v": 0
                      }
                      <br>
-  Response Fail 203: {msg: "Hubo un Error al obtener Mutantes"}\\\
- <br><br>
+  Response Fail 403: {msg: "Hubo un Error al obtener Mutantes"}
+ <br><br><br>
  
 **Desarollado por: Geovanny Córdova.**
