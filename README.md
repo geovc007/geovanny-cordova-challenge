@@ -1,6 +1,6 @@
-geovanny-cordova-challenge**\\
+**geovanny-cordova-challenge**<br><br>
 
-**Aplicacion desarrollada para Challenge Nodejs**\\
+**Aplicacion desarrollada para Challenge Nodejs**<br><br>
 
 Se ha implementado una aplicacion con Nodejs, Express, Swagger y Jest para cubrir todos los
 ambitos requridos para una aplicacion profesional, se ha trabajado con dos ramas para poder 
