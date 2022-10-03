@@ -25,9 +25,18 @@ exports.ingresarMutante = async (req, res) => {
         await mutant.save();
         res.send({ msg: "El Adn es Mutante" });
       } else {
-        mutant.verify = row;
-        await mutant.save();
-        res.status(403).send({ msg: "El Adn es Humano" });
+        // Evaluate Mutants Div
+        const div = mutantService.verificarMutanteDiv(dna);
+        if(div === true){
+          mutant.verify = div;
+          await mutant.save();
+          res.send({ msg: "El Adn es Mutante" });
+        }
+        else{
+          mutant.verify = div;
+          await mutant.save();
+          res.status(403).send({ msg: "El Adn es Humano" });
+        }
       }
     }
   } catch (error) {
