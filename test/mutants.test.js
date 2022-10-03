@@ -20,19 +20,19 @@ test("Should Verify Human", async () => {
   expect(response).toBe(false);
 });
 
-test("Should Verify Mutant in  left->rigth top->bottom", async () => {
+test("Should Verify Mutant in left->rigth top->bottom", async () => {
   const dna = ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CTACAT", "TCACTA"];
   const response = mutantServices.verificarMutanteDiv(dna);
   expect(response).toBe(true);
 });
 
-test("Should Verify Mutant in  left->rigth bottom->top", async () => {
+test("Should Verify Mutant in left->rigth bottom->top", async () => {
   const dna = ["ATGCGT", "CAGTTC", "TTGTGT", "AGTAGG", "CTACAT", "TCACTA"];
   const response = mutantServices.verificarMutanteDiv(dna);
   expect(response).toBe(true);
 });
 
-test("Should Verify Mutant in  rigth->left bottom->top", async () => {
+test("Should Verify Mutant in bottom->top rigth->left", async () => {
   const dna = ["ATGCGT", "CAGTTC", "TTGTGT", "AGTAGG", "CTACAT", "TCACTA"];
   const response = mutantServices.verificarMutanteDiv(dna);
   expect(response).toBe(true);

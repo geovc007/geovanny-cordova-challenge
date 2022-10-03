@@ -84,7 +84,7 @@ const verificarMutanteDiv = (dna) => {
       newRow += matrizDNA[j][colL];
       countL++;
       colL++;
-      if (colL === matrizDNA.length) {
+      if (colL === (matrizDNA.length-i)) {
         if (newRow.length > 3) {
           matColum.push(newRow);
         }
