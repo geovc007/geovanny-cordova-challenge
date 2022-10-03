@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 4000;
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/mutant", require("./routes/mutant"));
+app.use('/', function (req, res) {
+  res.send("Bienvenidos a Challenge Geovanny Córdova");});
 
 app.listen(PORT, () => {
   console.log(`Server ejecutandose, listen port ${PORT}`);

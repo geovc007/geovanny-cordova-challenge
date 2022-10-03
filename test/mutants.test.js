@@ -15,7 +15,7 @@ test("Should Verify Mutant in COL", async () => {
 });
 
 test("Should Verify Human", async () => {
-  const dna = ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CTACTA", "TCACTG"];
+  const dna = ["ATGCGA", "CAGTGC", "TTATGT","AGAXGG","CCCTA", "TCACTT"]
   const response = mutantServices.verificarMutanteRow(dna);
   expect(response).toBe(false);
 });
