@@ -66,7 +66,7 @@ const verificarMutanteDiv = (dna) => {
     }
     let countR = matrizDNA.length - 1;
     let colR = i;
-    newRow="";
+    newRow = "";
     for (let j = matrizDNA.length - 1; j >= i; j--) {
       newRow += matrizDNA[j][colR];
       countR++;
@@ -78,13 +78,13 @@ const verificarMutanteDiv = (dna) => {
         newRow = "";
       }
     }
-    let countL = i
+    let countL = i;
     let colL = 0;
-    for (let j = (matrizDNA.length- 1) - i; j >= 0; j--) {
+    for (let j = matrizDNA.length - 1 - i; j >= 0; j--) {
       newRow += matrizDNA[j][colL];
       countL++;
       colL++;
-      if (colL === (matrizDNA.length-i)) {
+      if (colL === matrizDNA.length - i) {
         if (newRow.length > 3) {
           matColum.push(newRow);
         }
@@ -95,8 +95,28 @@ const verificarMutanteDiv = (dna) => {
   return verificarMutanteRow(matColum);
 };
 
+const verificarAdn = (dna) => {
+  let matrizDNA = [];
+  for (const element of dna) {
+    matrizDNA.push(element.split(""));
+  }
+  for (const element of matrizDNA) {
+    for (let j = 0; j < matrizDNA.length; j++) {
+      if (
+        element[j] !== "A" &&
+        element[j] !== "T" &&
+        element[j] !== "C" &&
+        element[j] !== "G"
+      ) {
+        return false;
+      }
+    }
+  }
+};
+
 module.exports = {
   verificarMutanteRow,
   verificarMutanteCol,
   verificarMutanteDiv,
+  verificarAdn,
 };

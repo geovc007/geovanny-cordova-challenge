@@ -12,6 +12,12 @@ exports.ingresarMutante = async (req, res) => {
     mutant = new Mutant(req.body);
     // Evalute Mutants Row
     const { dna } = mutant;
+    const valid = mutantService.verificarAdn(dna);
+    if (valid === false) {
+      return res
+        .status(403)
+        .json({ msg: "El ADN no tiene el formato correcto: (A,T,C,G)" });
+    }
     const row = mutantService.verificarMutanteRow(dna);
     if (row === true) {
       mutant.verify = row;
@@ -56,7 +62,7 @@ exports.statusMutante = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.status(403).send({msg: "Hubo un Error al obtener Mutantes"});
+    res.status(403).send({ msg: "Hubo un Error al obtener Mutantes" });
   }
 };
 
@@ -66,6 +72,6 @@ exports.getMutant = async (req, res) => {
     res.json({ mutants });
   } catch (error) {
     console.log(error);
-    res.status(403).send({msg: "Hubo un Error al obtener Mutantes"});
+    res.status(403).send({ msg: "Hubo un Error al obtener Mutantes" });
   }
 };
